@@ -16,17 +16,37 @@ function App() {
 
   return (
     <div className="App">
-      <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>Student Management System</h1>
-      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px' }}>
-        <StudentForm 
-          onStudentAdded={handleStudentAdded}
-          editingStudent={editingStudent}
-          setEditingStudent={setEditingStudent}
-        />
-        <StudentList 
-          refreshTrigger={refreshTrigger} 
-          setEditingStudent={setEditingStudent}
-        />
+      <div className="app-header">
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px' }}>
+          <img 
+            src="https://web.ua.edu.ph/wp-content/uploads/2024/09/ua-logo.png" 
+            alt="UA Logo"
+            style={{
+              height: '100px',
+              width: 'auto',
+              objectFit: 'contain'
+            }}
+          />
+          <div style={{ textAlign: 'left' }}>
+            <h1 style={{ margin: '0 0 10px 0' }}>Student Management System</h1>
+            <p style={{ margin: '0', opacity: 0.9 }}>Manage your students efficiently and effectively</p>
+          </div>
+        </div>
+      </div>
+      <div className="app-container">
+        <div className="section">
+          <StudentForm 
+            onStudentAdded={handleStudentAdded}
+            editingStudent={editingStudent}
+            setEditingStudent={setEditingStudent}
+          />
+        </div>
+        <div className="section">
+          <StudentList 
+            refreshTrigger={refreshTrigger} 
+            setEditingStudent={setEditingStudent}
+          />
+        </div>
       </div>
     </div>
   );
